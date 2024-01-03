@@ -1,0 +1,65 @@
+
+section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-section {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.register-form {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.register-form h2 {
+  text-align: center;
+  color: rgb(255, 0, 242);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+textarea,
+button,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #444;
+  color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+}
+
+input[type="submit"] {
+  background-color: rgb(255, 0, 242);
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(131, 0, 124);
+}

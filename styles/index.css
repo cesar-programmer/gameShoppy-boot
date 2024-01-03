@@ -1,0 +1,11 @@
+.index-section h2{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.index-section p{
+  text-align: center;
+}

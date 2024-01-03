@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/utilities.css">
+  <link rel="stylesheet" href="./styles/order.css">
+  <title>Pre-order a Game</title>
+</head>
+<body>
+  <header class="site-init">
+    <div class="bar">
+      <h1><a href="index.html" class="logo">ShoppyGame</a></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="order.html">Pre-order</a>
+        <a href="register.html">Register new Game</a>
+      </nav>
+    </div>
+    <p>We sell the best games at the best price</p>
+  </header>
+
+  <h2 style="text-align: center;">Pre-order a Game</h2>
+  <p style="text-align: center;">Discover a world of exciting games and exclusive offers. Shop with us for the ultimate gaming experience.</p>
+
+  <section>
+    <form class="preorder-form">
+      <div class="form-group">
+        <label for="gameTitle">Game Title</label>
+        <input type="text" id="gameTitle" name="gameTitle" required>
+      </div>
+
+      <div class="form-group">
+        <label for="customerName">Your Name</label>
+        <input type="text" id="customerName" name="customerName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+      </div>
+
+      <button type="submit">Pre-order Now</button>
+    </form>
+  </section>
+</body>
+</html>

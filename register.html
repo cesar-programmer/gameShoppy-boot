@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/utilities.css">
+  <link rel="stylesheet" href="./styles/register.css">
+  <title>ShoppyGame - Home</title>
+</head>
+<body>
+  <header class="site-init">
+    <div class="bar">
+      <h1><a href="index.html" class="logo">ShoppyGame</a></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="order.html">Pre-order</a>
+        <a href="register.html">Register new Game</a>
+      </nav>
+    </div>
+    <p>We sell the best games at the best price</p>
+  </header>
+
+  <section class="register-section">
+    <h2>Register a new game</h2>
+    <p>Discover a world of exciting games and exclusive offers. Shop with us for the ultimate gaming experience.</p>
+  </section>
+
+  <section class="form-section">
+    <form class="game-form" id="game-form">
+      <h2>Register a New Game</h2>
+      <div class="form-group">
+        <label for="name">Game Title</label>
+        <input type="text" name="name" id="name" placeholder="Enter the title of the game" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" placeholder="Enter the description of the game" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="price">Price ($)</label>
+        <input type="number" name="price" id="price" placeholder="Enter the price of the game" required>
+      </div>
+      <div class="form-group">
+        <label for="image">Image URL</label>
+        <input type="text" name="image" id="image" placeholder="Enter the image URL of the game" required>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select name="category" id="category" required>
+          <option value="" disabled selected>Select a category</option>
+          <option value="rpg">RPG</option>
+          <option value="fighting">fighting</option>
+          <option value="adventure">adventure</option>
+          <option value="fps">FPS</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="button" onclick="formSubmit()">Register a Game</button>
+      </div>
+    </form>
+  </section>
+
+
+  <section class="games-section" id="games-section">
+  </section>
+
+    <footer class="site-footer">
+    <div class="footer-content">
+    </div>
+  </footer>
+
+  <script type="module" src="./scripts/register.js"></script>
+
+  </script>
+</body>
+</html>
