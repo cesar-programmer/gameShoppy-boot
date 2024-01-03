@@ -1,6 +1,5 @@
 import { addGame, games, removeGame } from './games.js'
 
-// Función para renderizar las tarjetas de juegos
 function renderGames () {
   const gamesContainer = document.getElementById('games-section')
 
@@ -22,7 +21,6 @@ function removeGameList (index) {
   renderGames()
 }
 
-// Función para manejar el envío del formulario
 function formSubmit () {
   const gameTitle = document.getElementById('name').value
   const gameGenre = document.getElementById('description').value
@@ -40,17 +38,13 @@ function formSubmit () {
 
   addGame(newGame)
 
-  // Renderiza las tarjetas de juegos actualizadas
   renderGames()
 
-  // Limpia el formulario
   document.getElementById('game-form').reset()
   alert('Game added successfully')
 }
 
-// Llama a la función para renderizar las tarjetas al cargar la página
 document.addEventListener('DOMContentLoaded', renderGames)
 
-// Exponer la función formSubmit al ámbito global
 window.formSubmit = formSubmit
 window.removeGameList = removeGameList
