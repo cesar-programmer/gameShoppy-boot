@@ -1,4 +1,4 @@
-import { addGame, games, removeGame } from './games.js'
+import { addGame, games, removeGame, Game } from './games.js'
 
 function renderGames () {
   const gamesContainer = document.getElementById('games-section')
@@ -28,13 +28,7 @@ function formSubmit () {
   const imageG = document.getElementById('image').value
   const categoryG = document.getElementById('category').value
 
-  const newGame = {
-    title: gameTitle,
-    genre: gameGenre,
-    price: priceG,
-    image: imageG,
-    category: categoryG
-  }
+  const newGame = new Game(gameTitle, gameGenre, priceG, imageG, categoryG)
 
   addGame(newGame)
 

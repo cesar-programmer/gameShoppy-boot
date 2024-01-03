@@ -15,4 +15,12 @@ function removeGame (index) {
   games.splice(index, 1)
 }
 
-export { addGame, removeGame, games }
+function Game (title, genre, price, image, category) {
+  this.title = title
+  this.genre = genre
+  this.price = price
+  this.image = image
+  this.category = category
+}
+
+export { addGame, removeGame, games, Game }
