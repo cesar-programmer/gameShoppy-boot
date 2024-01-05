@@ -2,11 +2,24 @@
 section {
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 40px;
   padding: 20px;
-  background-color: #fff;
+  background-color: #1f1f1f;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.preorder-form{
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.preorder-form h2 {
+  text-align: center;
+  color: rgb(255, 0, 242);
+}
+
 
 .register-section {
   max-width: 600px;
@@ -34,6 +47,7 @@ section {
 label {
   display: block;
   margin-bottom: 8px;
+  color:white;
 }
 
 input,
@@ -54,12 +68,12 @@ select {
   appearance: none;
 }
 
-input[type="submit"] {
+button[type="submit"] {
   background-color: rgb(255, 0, 242);
   color: white;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
   background-color: rgb(131, 0, 124);
 }
