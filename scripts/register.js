@@ -2,8 +2,11 @@ import { addGame, games, removeGame, Game } from './games.js'
 
 function renderGames () {
   const gamesContainer = document.getElementById('games-section')
+  const counterContainer = document.getElementById('counter')
 
   gamesContainer.innerHTML = ''
+
+  counterContainer.innerHTML = `<p>Total games: ${games.length}</p>`
 
   gamesContainer.innerHTML = games.map((game, index) => `
     <div class="game-card">
@@ -27,6 +30,11 @@ function formSubmit () {
   const priceG = Number(document.getElementById('price').value)
   const imageG = document.getElementById('image').value
   const categoryG = document.getElementById('category').value
+
+  if (!gameTitle || !gameGenre || !priceG || !imageG || !categoryG) {
+    alert('Please fill in all fields')
+    return
+  }
 
   const newGame = new Game(gameTitle, gameGenre, priceG, imageG, categoryG)
 

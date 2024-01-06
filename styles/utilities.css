@@ -31,7 +31,7 @@ a{
   background-image: url(../imgs/header1.jpg);
   background-size: cover;
   border-bottom: 1px solid #eee;
-  height: 300px;
+  height: 250px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -82,13 +82,12 @@ a{
     flex-direction: column;
   }
 }
-
 .games-section{
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 170px;
 }
 
 .game-card {
@@ -120,4 +119,21 @@ a{
 .game-card p.price {
   font-weight: bold;
   color: #007BFF;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+footer a {
+  color: #ff008f;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }

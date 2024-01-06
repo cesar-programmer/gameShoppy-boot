@@ -59,3 +59,15 @@ input[type="submit"]:hover {
   margin: 0 auto;
   margin-top: 20px;
 }
+
+#counter {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#counter p {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}

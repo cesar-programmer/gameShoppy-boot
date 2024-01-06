@@ -1,4 +1,3 @@
-// games.js
 const games = [
   { title: 'Super mario', price: 20, image: 'https://wallpaperaccess.com/full/2879674.jpg', category: 'adventure' },
   { title: 'Zelda', price: 30, image: 'https://gamingbolt.com/wp-content/uploads/2022/09/the-legend-of-zelda-tears-of-the-kingdom-1.jpg', category: 'adventure' },
