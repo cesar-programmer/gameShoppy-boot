@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { addGame, games, removeGame, Game } from './games.js'
 
 function renderGames () {
@@ -17,11 +18,14 @@ function renderGames () {
       <button onclick="removeGameList('${index}')">Remove</button>
     </div>
   `).join('')
+
+  $('#notifications').hide()
 }
 
 function removeGameList (index) {
   removeGame(index)
   renderGames()
+  showNotification('notifications', 'Game removed successfully', 'alert-success')
 }
 
 function formSubmit () {
@@ -32,7 +36,7 @@ function formSubmit () {
   const categoryG = document.getElementById('category').value
 
   if (!gameTitle || !gameGenre || !priceG || !imageG || !categoryG) {
-    alert('Please fill in all fields')
+    showNotification('notifications', 'Please fill all the fields', 'alert-danger')
     return
   }
 
@@ -42,8 +46,15 @@ function formSubmit () {
 
   renderGames()
 
+  // this line is jquery syntax showing the notification when the game is added
+  showNotification('notifications', 'Game added successfully', 'alert-success')
   document.getElementById('game-form').reset()
-  alert('Game added successfully')
+}
+
+function showNotification (id, message, type) {
+  $(`#${id}`).removeClass('alert-success')
+  $(`#${id}`).removeClass('alert-danger')
+  $(`#${id}`).text(message).addClass(type).slideDown(300).delay(3000).slideUp(300)
 }
 
 document.addEventListener('DOMContentLoaded', renderGames)

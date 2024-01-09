@@ -82,12 +82,20 @@ a{
     flex-direction: column;
   }
 }
-.games-section{
+.games-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 170px;
+  margin-left: 140px;
+}
+
+.console-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 140px;
 }
 
 .game-card {
@@ -120,6 +128,38 @@ a{
   font-weight: bold;
   color: #007BFF;
 }
+
+.console-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.console-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.console-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
+
+.console-card p {
+  margin-bottom: 4px;
+}
+
+.console-card p.price {
+  font-weight: bold;
+  color: #007BFF;
+}
+
 
 footer {
   margin-top: 40px;
