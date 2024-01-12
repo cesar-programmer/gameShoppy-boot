@@ -25,10 +25,16 @@
 
   <h2 style="text-align: center;">Pre-order a Game</h2>
   <p style="text-align: center;">Discover a world of exciting games and exclusive offers. Shop with us for the ultimate gaming experience.</p>
-
+  
   <section>
     <form class="preorder-form">
       <h2>Pre-order</h2>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+      </div>
+
       <div class="form-group">
         <label >Game Title</label>
         <select type="text" id="gameTitle" name="gameTitle" required>
@@ -45,9 +51,10 @@
         <input type="email" id="email" name="email" required>
       </div>
 
+
       <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" name="quantity" min="1" required>
+        <label for="total">Total</label>
+        <span id="totalAmount"></span>
       </div>
 
       <button onclick="orderComplete()">Pre-order Now</button>
