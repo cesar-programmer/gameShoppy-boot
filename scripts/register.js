@@ -1,15 +1,19 @@
 /* eslint-disable no-undef */
-import { addGame, games, removeGame, Game } from './games.js'
-
+import { addGame, removeGame, Game, games } from './games.js'
+import { saveContextGames, loadContextGames, deleteContextGames } from './context.js'
 function renderGames () {
   const gamesContainer = document.getElementById('games-section')
   const counterContainer = document.getElementById('counter')
 
+  const gamesSave = loadContextGames()
+
   gamesContainer.innerHTML = ''
+  // this reduce method is used to sum all the prices of the games
+  const amount = gamesSave.reduce((i, game) => i + game.price, 0)
+  counterContainer.innerHTML = `<p>Total games: ${gamesSave.length}</p><p>Total amount: $${amount}</p>`
 
-  counterContainer.innerHTML = `<p>Total games: ${games.length}</p>`
-
-  gamesContainer.innerHTML = games.map((game, index) => `
+  // this map method is used to iterate over the array and return a new array with the html
+  gamesContainer.innerHTML = gamesSave.map((game, index) => `
     <div class="game-card">
       <img src="${game.image}" alt="${game.title}">
       <h3>${game.title}</h3>
@@ -24,6 +28,7 @@ function renderGames () {
 
 function removeGameList (index) {
   removeGame(index)
+  deleteContextGames(index)
   renderGames()
   showNotification('notifications', 'Game removed successfully', 'alert-success')
 }
@@ -43,6 +48,8 @@ function formSubmit () {
   const newGame = new Game(gameTitle, gameGenre, priceG, imageG, categoryG)
 
   addGame(newGame)
+
+  saveContextGames(games)
 
   renderGames()
 

@@ -1,15 +1,19 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import { addConsole, removeConsole, consoles, Console } from './consoles.js'
+import { addConsole, removeConsole, Console, consoles } from './consoles.js'
+import { saveContextConsoles, loadContextConsoles, deleteContextConsoles } from './context.js'
 
 function renderConsoles () {
   const consolesContainer = document.getElementById('console-section')
   const counterContainer = document.getElementById('counter')
+
+  const consolesSave = loadContextConsoles()
+
   consolesContainer.innerHTML = ''
-  counterContainer.innerHTML = `<p>Total consoles: ${consoles.length}</p>`
-  consolesContainer.innerHTML = consoles
-    .map(
-      (console, index) => `
+  const amount = consolesSave.reduce((acc, console) => acc + console.price, 0)
+  counterContainer.innerHTML = `<p>Total consoles: ${consolesSave.length}</p><p>Total amount: $${amount}</p>`
+
+  consolesContainer.innerHTML = consolesSave.map((console, index) => `
     <div class="console-card">
       <img src="${console.img}" alt="${console.name}">
       <h3>${console.name}</h3>
@@ -17,14 +21,14 @@ function renderConsoles () {
       <button onclick="removeConsoleList('${index}')">Remove</button>
     </div>
   `
-    )
-    .join('')
+  ).join('')
   $('#notifications').hide()
   $('#btnRegister').on('click', formSubmit)
 }
 
 function removeConsoleList (index) {
   removeConsole(index)
+  deleteContextConsoles(index)
   renderConsoles()
   showNotification('notifications', 'Console removed successfully', 'alert-success')
 }
@@ -42,6 +46,8 @@ function formSubmit () {
   const newConsole = new Console(consoleName, priceC, imageC)
 
   addConsole(newConsole)
+
+  saveContextConsoles(consoles)
 
   renderConsoles()
 

@@ -1,7 +1,8 @@
-import { games } from './games.js'
-import { consoles } from './consoles.js'
-console.log(games)
+import { loadContextConsoles, loadContextGames } from './context.js'
 
+const games = loadContextGames()
+const consoles = loadContextConsoles()
+// map is a method that allows us to iterate over an array and return a new array
 document.getElementById('games-section').innerHTML = games.map(game => `
   <div class="game-card">
     <img src="${game.image}" alt="${game.title}">

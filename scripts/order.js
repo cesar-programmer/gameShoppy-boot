@@ -1,5 +1,6 @@
-import { games } from './games.js'
-console.log(games)
+import { loadContextGames } from './context.js'
+
+const games = loadContextGames()
 
 function init () {
   const select = document.getElementById('gameTitle')
