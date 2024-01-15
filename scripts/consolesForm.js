@@ -10,9 +10,11 @@ function renderConsoles () {
   const consolesSave = loadContextConsoles()
 
   consolesContainer.innerHTML = ''
-  const amount = consolesSave.reduce((acc, console) => acc + console.price, 0)
+  // reduce is a method that allows us to iterate over an array and return a single value
+  const amount = consolesSave.reduce((i, console) => i + console.price, 0)
   counterContainer.innerHTML = `<p>Total consoles: ${consolesSave.length}</p><p>Total amount: $${amount}</p>`
 
+  // map is a method that allows us to iterate over an array and return a new array
   consolesContainer.innerHTML = consolesSave.map((console, index) => `
     <div class="console-card">
       <img src="${console.img}" alt="${console.name}">
@@ -23,7 +25,6 @@ function renderConsoles () {
   `
   ).join('')
   $('#notifications').hide()
-  $('#btnRegister').on('click', formSubmit)
 }
 
 function removeConsoleList (index) {
@@ -37,7 +38,7 @@ function formSubmit () {
   const consoleName = document.getElementById('name').value
   const priceC = Number(document.getElementById('price').value)
   const imageC = document.getElementById('image').value
-
+  console.log('Form data:', consoleName, priceC, imageC)
   if (!consoleName || !priceC || !imageC) {
     showNotification('notifications', 'Please fill all the fields', 'alert-danger')
     return
